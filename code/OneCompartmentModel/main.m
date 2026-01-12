@@ -38,7 +38,7 @@ R = y(:, 2)'; % free receptor
 P = y(:, 3)'; % complex
 
 %% 4. Results Visualization
-figure('Units', 'normalized', 'Position', [0.1, 0.1, 0.6, 0.6]);
+figure('Units', 'normalized', 'Position', [0.1, 0.05, 0.7, 1]);
 
 % Plotting the trajectories
 plot(t, L, 'LineWidth', 2); 
@@ -49,6 +49,6 @@ plot(t, P, 'LineWidth', 2);
 % Formatting
 xlabel('Time', 'FontSize', 12);
 ylabel('Concentration', 'FontSize', 12);
-legend({'Free Drug (L)', 'Free Receptor (R)', 'Complex (P)'}, 'Location', 'bestoutside');
+legend({'Free Drug (L)', 'Free Receptor (R)', 'Complex (P)'}, 'Location', 'best');
 grid on;
 set(gca, 'FontSize', 11);
