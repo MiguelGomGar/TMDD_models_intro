@@ -46,20 +46,23 @@ for i = 1:length(t)
 end
 
 %% 5. Plotting
-figure('Name','QE Model');
-subplot(1,2,1);
-plot(t, L_tot_res, 'DisplayName', 'L_{tot}'); 
+figure('Units', 'normalized', 'Position', [0.1, 0.005, 0.7, 1]);
+plot(t, L_tot_res, 'Linewidth', 2, 'DisplayName', 'L_{tot}'); 
 hold on;
-plot(t, Lc_res, 'DisplayName', 'L_c (Free)');
+plot(t, Lc_res, 'Linewidth', 2,'DisplayName', 'L_c (Free)');
 title('Drug Kinetics (QE)'); 
+xlabel('Time');
+ylabel('Concentration');
 legend; 
 grid on;
 
-subplot(1,2,2);
-plot(t, R_tot_res, 'DisplayName', 'R_{tot}'); 
+figure('Units', 'normalized', 'Position', [0.1, 0.005, 0.7, 1]);
+plot(t, R_tot_res, 'Linewidth', 2, 'DisplayName', 'R_{tot}'); 
 hold on;
-plot(t, R_res, 'DisplayName', 'R (Free)');
-plot(t, P_res, 'DisplayName', 'P (Complex)');
-title('Target Dynamics (QE)'); 
+plot(t, R_res, 'Linewidth', 2, 'DisplayName', 'R (Free)');
+plot(t, P_res, 'Linewidth', 2, 'DisplayName', 'P (Complex)');
+title('Target Dynamics (QE)');
+xlabel('Time');
+ylabel('Concentration');
 legend; 
 grid on;

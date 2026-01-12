@@ -45,7 +45,7 @@ P_res  = y(:, 4);
 %% 4. Visualization
 
 % Plot 1: Drug Distribution (Central vs Tissue)
-figure('Units', 'normalized', 'Position', [0.1, 0.1, 0.7, 0.5]);
+figure('Units', 'normalized', 'Position', [0.1, 0.005, 0.7, 1]);
 plot(t, Lc_res, 'LineWidth', 2, 'DisplayName', 'Central Drug (L_C)');
 hold on;
 plot(t, Lt_res, 'LineWidth', 2, 'DisplayName', 'Tissue Drug (L_T)');
@@ -53,12 +53,12 @@ xlim([0, 50]);
 xlabel('Time');
 ylabel('Concentration');
 title('Drug Distribution Kinetics');
-legend('Location', 'bestoutside');
+legend('Location', 'best');
 grid on;
 set(gca, 'FontSize', 11);
 
 % Plot 2: Receptor & Complex Dynamics
-figure('Units', 'normalized', 'Position', [0.1, 0.1, 0.7, 0.5]);
+figure('Units', 'normalized', 'Position', [0.1, 0.005, 0.7, 1]);
 plot(t, R_res, 'LineWidth', 2, 'DisplayName', 'Free Receptor (R)');
 hold on;
 plot(t, P_res, 'LineWidth', 2, 'DisplayName', 'Complex (P)');
@@ -66,6 +66,6 @@ yline(R0, ':', 'Baseline R_0', 'HandleVisibility', 'off'); % Reference line
 xlabel('Time');
 ylabel('Concentration');
 title('Target Binding Dynamics');
-legend('Location', 'bestoutside');
+legend('Location', 'best');
 grid on;
 set(gca, 'FontSize', 11);

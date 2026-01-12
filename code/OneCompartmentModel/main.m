@@ -5,7 +5,7 @@ clear; clc; close all;
 %% 1. Parameter Configuration
 % Kinetic constants
 params.k_eL  = 0.15;  % Drug elimination rate
-params.k_eP  = 0.05;  % Complex elimination rate
+params.k_eP  = 0.001;  % Complex elimination rate
 params.k_on  = 0.25;  % Binding rate
 params.k_off = 0.08;  % Unbinding rate
 params.k_in  = 1.20;  % Receptor production
@@ -45,10 +45,12 @@ plot(t, L, 'LineWidth', 2);
 hold on;
 plot(t, R, 'LineWidth', 2);
 plot(t, P, 'LineWidth', 2);
+yline(R0, '--g');
 
 % Formatting
+xlim([0 60]);
 xlabel('Time', 'FontSize', 12);
 ylabel('Concentration', 'FontSize', 12);
-legend({'Free Drug (L)', 'Free Receptor (R)', 'Complex (P)'}, 'Location', 'best');
+legend({'Free Drug (L)', 'Free Receptor (R)', 'Complex (P)', 'Total Receptor(R0)'}, 'Location', 'best');
 grid on;
 set(gca, 'FontSize', 11);
